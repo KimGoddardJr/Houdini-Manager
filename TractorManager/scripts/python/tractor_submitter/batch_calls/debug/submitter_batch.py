@@ -12,7 +12,7 @@ hou.putenv("HOUDINI_OTLSCAN_PATH", "{}{}".format(os.environ["HOUDINI_OTLSCAN_PAT
 #for k, v in os.environ.items():
 #    print k, v
 
-print sys.argv[1]
+print(sys.argv[1])
 
 # Load the hip file
 hou.hipFile.load(sys.argv[1])

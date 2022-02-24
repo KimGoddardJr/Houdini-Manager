@@ -1,6 +1,9 @@
-# Houdini-Tractor-Submit
+## Houdini Tractor Manager
 
-A merger from the HTTP based method used in the maya submitter and a custom GUI created specifically for Houdini Submission handling.
-This plugin only works in in the work environment it was created for, with a couple of tweaks it can be fitted to be used in another environment though.
+This is the Houdini Tractor submitter and manager I'm currently developing to help manage a project pipeline in conjunction with Pixars Tractor.
 
-Git clone this into your Houdini packages folder,add a '.json'-file named after the folder and add {"path" : "$HOUDINI_PACKAGE_PATH/Houdini-Tractor-Submit"}.
+For it to work properly it's important to have it working in conjunction with a couple of python-presets in the <scripts> folder.
+
+More description to be added since this Tool is in active development and I work on it when time is given. 
+The long term goal is to make this tool platform independent.
+Contributions are welcome.

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pythonPanelDocument>
+  <!-- This file contains definitions of Python interfaces and the
+ interfaces menu.  It should not be hand-edited when it is being
+ used by the application.  Note, that two definitions of the
+ same interface or of the interfaces menu are not allowed
+ in a single file. -->
+
+  <interface name="hslu_tractor" label="Tractor Manager" icon="NETWORKS_top" help_url="https://wiki.animation-luzern.ch/Main_Page">
+    <script><![CDATA[
+from toolutils import safe_reload
+from importlib import reload
+import hou
+from tractor_submitter import main_gui,hslu_gui_methods,hslu_gui_objects,hslu_houdini_methods,hslu_util_methods,hslu_trollmethods,hslu_db_methods,hslu_submission_methods,submitter
+
+reload(hslu_gui_objects)
+reload(submitter)
+reload(main_gui)
+reload(hslu_gui_methods)
+reload(hslu_db_methods)
+reload(hslu_houdini_methods)
+reload(hslu_submission_methods)
+reload(hslu_trollmethods)
+reload(hslu_util_methods)
+
+
+CallWin = None
+
+def onCreateInterface():
+    global CallWin
+    CallWin = main_gui.MainWindow()
+    return CallWin
+]]>    </script>
+    <includeInPaneTabMenu menu_position="100" create_separator="false"/>
+    <help><![CDATA[]]></help>
+  </interface>
+</pythonPanelDocument>

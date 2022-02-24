@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Please note, that the files defining the main menu (ie, MainMenuCommon,
+     MainMenuMaster, and MainMenuEscape)
+     can exist in $HOME/houdiniX.Y/ directory and will supplement 
+     the original definitions found in $HFS/houdini/ -->
+
+<!-- Please see ExampleMenu.xml for examples that customise the main menu. -->
+<!-- Please see menu.xsd for the menu validation schema. -->
+<mainMenu>
+  <menuBar>
+
+    <!-- An example of how to add own python scripts submenu to the main menu.
+
+	  Note, that the 'id' attribute is optional, and if not specified, 
+	  it will be automaticaly generated and assigned internally. The 'id'
+	  has some significace for action and toggle items, where it corresponds
+	  to the hotkey for that item. However, if no hotkey needs to be
+	  assigned in the hotkey customization file, the id may be omitted for
+	  these items too
+    -->
+    <subMenu>
+      <modifyItem>
+        <insertBefore>help_menu</insertBefore>
+      </modifyItem>
+      <label>HSLU</label>
+      <scriptItem id="h.hslu_tractor_submit">
+        <label>Tractor Submitter</label>
+        <scriptCode scriptType="python">
+          <![CDATA[
+from importlib import reload
+from toolutils import safe_reload
+import hou
+from tractor_submitter import main,main_gui,hslu_gui_methods,hslu_gui_objects,hslu_houdini_methods,hslu_util_methods,hslu_trollmethods,hslu_db_methods,hslu_submission_methods,submitter
+
+reload(hslu_gui_objects)
+reload(submitter)
+reload(main_gui)
+reload(main)
+reload(hslu_gui_methods)
+reload(hslu_db_methods)
+reload(hslu_houdini_methods)
+reload(hslu_submission_methods)
+reload(hslu_trollmethods)
+reload(hslu_util_methods)
+
+
+main.go()
+        ]]>
+        </scriptCode>
+      </scriptItem>
+    </subMenu>
+  </menuBar>
+</mainMenu>
