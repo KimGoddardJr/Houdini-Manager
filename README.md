@@ -1,6 +1,6 @@
-## Houdini Tractor Manager
+## Houdini Scene Manager
 
-This is the Houdini Tractor submitter and manager I'm currently developing to help manage a project pipeline in conjunction with Pixars Tractor.
+This is a Houdini Sequence and Scene Manager I'm currently developing to help manage a project pipeline in conjunction with Pixars Tractor.
 
 For it to work properly it's important to have it working in with a couple of python-presets in the <scripts> folder.
 
